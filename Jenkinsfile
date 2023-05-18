@@ -19,15 +19,15 @@ pipeline {
       }
     }
       stage('Login') {
-      steps {
-        echo "---Logging to Dockerhub---"
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+         steps {
+            echo "---Logging to Dockerhub---"
+            sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
       stage('Push') {
-      steps {
-        echo "---Pushing to Dockerhub---"
-        sh 'docker push windfurylolz/springboot-helloworld'
+         steps {
+            echo "---Pushing to Dockerhub---"
+            sh 'docker push windfurylolz/springboot-helloworld'
       }
     }
   }
